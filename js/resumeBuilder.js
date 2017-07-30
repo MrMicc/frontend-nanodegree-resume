@@ -149,7 +149,7 @@ function mountSchools(schools) {
 
         school.majors.forEach(function (major) {
             $('.education-entry:last').append(HTMLschoolMajor.replace('%data%',major));
-        })
+        });
 
 
 
