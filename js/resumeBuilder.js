@@ -156,11 +156,11 @@ var projects =
             },
             description: "This project consist to redesign all user experience, integrations and the technological " +
             "application of their approximately 9 million of clients in the logged area.",
-            image: { //I put only one image, because I'm using it in another project mine
-                mobile: "http://via.placeholder.com/250x100",
-                destkop: "https://via.placeholder.com/300x150",
-                alt: "New logged area home page"
-            }
+            images:
+                [
+                    "http://via.placeholder.com/300x150",
+                    "https://via.placeholder.com/300x150"
+                ]
         },
         {
             title: "Interine of all portal",
@@ -173,11 +173,11 @@ var projects =
             },
             description: "It was responsible for all on going project, new projects and production support. Where portal" +
             "consist in the web store, CMS communication and logged area of all products and segments of the insurance company.",
-            image: { //I put only one image, because I'm using it in another project mine
-                mobile: "http://via.placeholder.com/250x100",
-                destkop: "https://via.placeholder.com/300x150",
-                alt: "New logged area home page"
-            }
+            images:
+                [
+                    "http://via.placeholder.com/300x150",
+                    "https://via.placeholder.com/300x150"
+                ]
         },
 
         {
@@ -191,11 +191,11 @@ var projects =
             },
             description: "Was responsible the coordinating of all on going projects and new projects of 6 business unit under " +
             "the entire web portal",
-            image: { //I put only one image, because I'm using it in another project mine
-                mobile: "http://via.placeholder.com/250x100",
-                destkop: "https://via.placeholder.com/300x150",
-                alt: "New logged area home page"
-            }
+            images:
+                [
+                    "http://via.placeholder.com/300x150",
+                    "https://via.placeholder.com/300x150"
+                ]
         },
         {
             title: "New Projects",
@@ -207,11 +207,11 @@ var projects =
                 flag: '🇧🇷'
             },
             description: "Responsible for planning of new projects that was the responsibility of the company IT directory",
-            image: { //I put only one image, because I'm using it in another project mine
-                mobile: "http://via.placeholder.com/250x100",
-                destkop: "https://via.placeholder.com/300x150",
-                alt: "New logged area home page"
-            }
+            images:
+                [
+                    "http://via.placeholder.com/300x150",
+                    "https://via.placeholder.com/300x150"
+                ]
         },
 
         {
@@ -224,11 +224,11 @@ var projects =
                 flag: '🇧🇷'
             },
             description: "Lorem ipsum lorem lorem aleluia",
-            image: { //I put only one image, because I'm using it in another project mine
-                mobile: "http://via.placeholder.com/250x100",
-                destkop: "https://via.placeholder.com/300x150",
-                alt: "lorem lorem"
-            }
+            images:
+                [
+                    "http://via.placeholder.com/300x150",
+                    "https://via.placeholder.com/300x150"
+                ]
         }
     ];
 
@@ -242,7 +242,10 @@ projects.display = function(){
             $(".project-entry:last").append(HTMLprojectDates.replace("%data%", project.dates));
             $(".project-entry:last").append(HTMLprojectDescription.replace("%data%",project.description));
 
-            $(".project-entry:last").append(HTMLprojectImage.replace("%data%",project.image.destkop));
+            project.images.forEach(function (image) {
+                $(".project-entry:last").append(HTMLprojectImage.replace("%data%",image));
+            });
+
 
         });
 };
