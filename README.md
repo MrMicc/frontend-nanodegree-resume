@@ -30,7 +30,7 @@ The GitHub readme file.
 
 ## Your starting point...
 ### js/helper.js
-Within helper.js, you’ll find a large collection of strings containing snippets of HTML. Within many snippets, you’ll find placeholder data in the form of `%data%` or `%contact%`.
+Within helper.js, you’ll find a large collection of strings containing snippets of HTML. Within many snippets, you’ll find placeholder data in the form of `%data%` or `%contacts%`.
 
 Each string has a title that describes how it should be used. For instance, `HTMLworkStart` should be the first `<div>` in the Work section of the resume. `HTMLschoolLocation` contains a `%data%` placeholder which should be replaced with the location of one of your schools.
 
@@ -61,12 +61,12 @@ The resume has four distinct sections: work, education, projects and a header wi
                  location: string
                  degree: string
                  majors: array of strings
-                 dates: string (works with a hyphen between them)
+                 dates: string (work with a hyphen between them)
                  url: string
             onlineCourses: array of objects with
                  title: string
                  school: string
-                 dates: string (works with a hyphen between them)
+                 dates: string (work with a hyphen between them)
                  url: string
             display: function taking no parameters
 
@@ -84,7 +84,7 @@ The resume has four distinct sections: work, education, projects and a header wi
 
             projects: array of objects with
                   title: string 
-                  dates: string (works with a hyphen between them)
+                  dates: string (work with a hyphen between them)
                   description: string
                   images: array with string urls
             display: function taking no parameters

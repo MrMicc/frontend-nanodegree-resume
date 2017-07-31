@@ -12,7 +12,7 @@ var bio ={
     welcomeMessage: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et " +
     "dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea " +
     "commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    contact: {
+    contacts: {
         email: "luiz.miccieli@gmail.com",
         mobile: "+5561992584303",
         github: "MrMicc",
@@ -33,9 +33,7 @@ var bio ={
         desktop: "http://via.placeholder.com/965x350"
 
     },
-    skills: ["consultant", "telcom", "nego doido"],
-    display: null
-
+    skills: ["consultant", "telcom", "nego doido"]
 };
 
 bio.display = function () {
@@ -60,6 +58,14 @@ bio.display = function () {
     $('#skills-h3').before(HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage));
 
 
+
+
+    /*************************************
+     *
+     * FOOTER
+     *
+     **************************************/
+    $('#footerContacts').append(mountContatct());
 };
 bio.display();
 
@@ -67,11 +73,11 @@ bio.display();
 //FUNCTION responsible to mount al contanct list
 function mountContatct(){
     "use strict";
-    var formattedContat = HTMLmobile.replace('%data%',bio.contact.mobile);
-    formattedContat += HTMLemail.replace("%data%", bio.contact.email);
-    formattedContat += HTMLgithub.replace('%data%', bio.contact.github);
-    formattedContat += HTMLtwitter.replace('%data%', bio.contact.twitter);
-    formattedContat += HTMLlocation.replace('%data%', bio.contact.location);
+    var formattedContat = HTMLmobile.replace('%data%',bio.contacts.mobile);
+    formattedContat += HTMLemail.replace("%data%", bio.contacts.email);
+    formattedContat += HTMLgithub.replace('%data%', bio.contacts.github);
+    formattedContat += HTMLtwitter.replace('%data%', bio.contacts.twitter);
+    formattedContat += HTMLlocation.replace('%data%', bio.contacts.location);
     return formattedContat;
 }
 
@@ -82,7 +88,7 @@ function mountContatct(){
  *
  *
  *************************/
-var works =
+var work =
     {
         jobs: [
             {
@@ -90,10 +96,7 @@ var works =
                 jobPosition: "Project Manager/Product Owner",
                 employer: "Millenium do Brasil",
                 description: "Lorem Lorem Lorem Lorem lorem huahaii lore",
-                dates: {
-                    start: "Setember - 2013",
-                    end: "Until Today"
-                },
+                dates:  "Setember 2013 - Today",
                 location: "Brasília"
             },
             {
@@ -101,19 +104,15 @@ var works =
                 jobPosition: "programmer",
                 employer: "ACN",
                 description: "Lorem Lorem Lorem Lorem lorem huahaii lore",
-                dates: {
-                    start: "Setember - 2007",
-                    end: "Setember - 2013"
-                },
+                dates: "Setember 2007 - Setember 2013",
                 location: "Brasilia"
 
-            }],
-        display: null
+            }]
     };
 
-works.display = function (){
-    //running over works
-    works.jobs.forEach(function (work) {
+work.display = function (){
+    //running over work
+    work.jobs.forEach(function (work) {
         //inserting the work-entry div inside of work experience
         $("#workExperience").append(HTMLworkStart);
 
@@ -126,7 +125,7 @@ works.display = function (){
         $('.work-entry:last').append(HTMLworkLocation.replace('%data%', work.location));
 
         //putting the dates from - to
-        var formattedDates = HTMLworkDates.replace("%data%", work.dates.start+", "+work.dates.end);
+        var formattedDates = HTMLworkDates.replace("%data%", work.dates);
         $(".work-entry:last").append(formattedDates);
 
         $(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.description));
@@ -134,7 +133,7 @@ works.display = function (){
 
     });
 };
-works.display();
+work.display();
 
 
 
@@ -149,10 +148,7 @@ var projects =
         {
             title: "New Logged Area",
             client: "Caixa Seguradora",
-            dates: {
-                start: "01/Jul/2017", //@made some changes here... Why work with hypen if I can play whit the object?
-                end: "Until Today"
-            },
+            dates:  "July 2017 - Today",
             country: { //changed location to country, make more sense to me
                 name: 'Brazil',
                 city: 'Brasília',
@@ -169,10 +165,7 @@ var projects =
         {
             title: "Interine of all portal",
             client: "Caixa Seguradora",
-            dates: {
-                start: "14/Feb/2017", //@made some changes here... Why work with hypen if I can play whit the object?
-                end: "30/Jun/2017"
-            },
+            dates: "February 2017 - July 2017",
             country: { //changed location to country, make more sense to me
                 name: 'Brazil',
                 city: 'Brasília',
@@ -190,10 +183,7 @@ var projects =
         {
             title: "Coordinator",
             client: "Caixa Seguradora",
-            dates: {
-                start: "15/Jan/2015", //@made some changes here... Why work with hypen if I can play whit the object?
-                end: "14/Feb/2017"
-            },
+            dates: "January 2015 - February 2017",
             country: { //changed location to country, make more sense to me
                 name: 'Brazil',
                 city: 'Brasília',
@@ -210,10 +200,7 @@ var projects =
         {
             title: "New Projects",
             client: "Caixa Seguradora",
-            dates: {
-                start: "10/Set/2014", //@made some changes here... Why work with hypen if I can play whit the object?
-                end: "15/Jan/2015"
-            },
+            dates:  "September 2014 - January 2015",
             country: { //changed location to country, make more sense to me
                 name: 'Brazil',
                 city: 'Brasília',
@@ -230,10 +217,7 @@ var projects =
         {
             title: "Title of second project",
             client: "XPTO",
-            dates: {
-                start: 2012, //@made some changes here... Why work with hypen if I can play whit the object?
-                end: 2015
-            },
+            dates: "January 2012 - September 2012",
             country: { //changed location to country, make more sense to me
                 name: 'Brazil',
                 city: 'Rio de Janeiro',
@@ -255,8 +239,7 @@ projects.display = function(){
             $("#projects").append(HTMLprojectStart);
 
             $(".project-entry:last").append(HTMLprojectTitle.replace("%data%",project.title));
-            var formattedDate  = project.dates.start+" - "+project.dates.end;
-            $(".project-entry:last").append(HTMLprojectDates.replace("%data%", formattedDate));
+            $(".project-entry:last").append(HTMLprojectDates.replace("%data%", project.dates));
             $(".project-entry:last").append(HTMLprojectDescription.replace("%data%",project.description));
 
             $(".project-entry:last").append(HTMLprojectImage.replace("%data%",project.image.destkop));
@@ -279,21 +262,15 @@ var education = {
         {
             name: "CECAP",
             location: "Brasilia",
-            dates: {
-                start: 1995, //@made some changes here... Why work with hypen if I can play whit the object?
-                end: 1999
-            },
-            ulr: "uol.com",
+            dates: "1995 - 1999",
+            url: "uol.com",
             majors: ["I dont remember"],
             degree : "College"
         },
         {
             name: "Marista",
             location: "Brasilia",
-            dates: {
-                start: 2000, //@made some changes here... Why work with hypen if I can play whit the object?
-                end: 2002
-            },
+            dates: "2000 - 2002",
             ulr: "google.com",
             majors: ["None"],
             degree: "High School"
@@ -304,14 +281,10 @@ var education = {
         {
             title: "Nano Degree",
             school: "Udacity",
-            dates: {
-                start: "2017", //@made some changes here... Why work with hypen if I can play whit the object?
-                end: "2017"
-            },
+            dates: "2017 - 2017",
             url: "http://www.udacity.com"
         }
-    ],
-    display: null
+    ]
 };
 
 education.display = function () {
@@ -329,7 +302,7 @@ function mountOnlineCourses(onlineCourses) {
         $('#education').find('h3').after(HTMLschoolStart);
         $('.education-entry:last').append(HTMLonlineTitle.replace('%data%', onlineCourse.title));
         $('.education-entry:last').find('a').append(HTMLonlineSchool.replace('%data%', onlineCourse.school));
-        $('.education-entry:last').append(HTMLonlineDates.replace('%data%', onlineCourse.dates.end));
+        $('.education-entry:last').append(HTMLonlineDates.replace('%data%', onlineCourse.dates));
         $('.education-entry:last').append(HTMLonlineURL.replace('%data%', onlineCourse.url));
     });
 
@@ -346,7 +319,7 @@ function mountSchools(schools) {
         $('.education-entry:last').append(HTMLschoolName.replace('%data%', school.name));
         $('.education-entry:last').find('a').append(HTMLschoolDegree.replace('%data%',school.degree));
         $('.education-entry:last').append(HTMLschoolLocation.replace('%data%', school.location));
-        $('.education-entry:last').append(HTMLschoolDates.replace('%data%',school.dates.end));
+        $('.education-entry:last').append(HTMLschoolDates.replace('%data%',school.dates));
 
 
         school.majors.forEach(function (major) {
@@ -365,12 +338,7 @@ function mountSchools(schools) {
 education.display();
 
 
-/*************************************
- *
- * FOOTER
- *
- **************************************/
-$('#footerContacts').append(mountContatct());
+
 
 
 /*************************************
