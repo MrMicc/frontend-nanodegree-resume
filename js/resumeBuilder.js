@@ -20,13 +20,13 @@ var bio ={
         location: "Brasília, Brasil"
     },
     biopic: "images/fry.jpg",
-    logo: {
+    logo: { //that parameters is been using in another project mine
         mobileLogo: "http://via.placeholder.com/50x50",
         tabletLogo: "http://via.placeholder.com/70x70",
         desktopLogo: "http://via.placeholder.com/100x100"
     },
 
-    mainImage: {
+    mainImage: {  //that parameters is been using in another project mine
         mobile: "http://via.placeholder.com/265x150",
         phablet: "http://via.placeholder.com/565x250",
         tablet: "http://via.placeholder.com/768x350",
@@ -150,17 +150,17 @@ var projects =
             title: "New Logged Area",
             client: "Caixa Seguradora",
             dates: {
-                start: "01/Jul/2017",
+                start: "01/Jul/2017", //@made some changes here... Why work with hypen if I can play whit the object?
                 end: "Until Today"
             },
-            country: {
+            country: { //changed location to country, make more sense to me
                 name: 'Brazil',
                 city: 'Brasília',
                 flag: '🇧🇷'
             },
             description: "This project consist to redesign all user experience, integrations and the technological " +
             "application of their approximately 9 million of clients in the logged area.",
-            image: {
+            image: { //I put only one image, because I'm using it in another project mine
                 mobile: "http://via.placeholder.com/250x100",
                 destkop: "https://via.placeholder.com/300x150",
                 alt: "New logged area home page"
@@ -170,17 +170,17 @@ var projects =
             title: "Interine of all portal",
             client: "Caixa Seguradora",
             dates: {
-                start: "14/Feb/2017",
+                start: "14/Feb/2017", //@made some changes here... Why work with hypen if I can play whit the object?
                 end: "30/Jun/2017"
             },
-            country: {
+            country: { //changed location to country, make more sense to me
                 name: 'Brazil',
                 city: 'Brasília',
                 flag: '🇧🇷'
             },
             description: "It was responsible for all on going project, new projects and production support. Where portal" +
             "consist in the web store, CMS communication and logged area of all products and segments of the insurance company.",
-            image: {
+            image: { //I put only one image, because I'm using it in another project mine
                 mobile: "http://via.placeholder.com/250x100",
                 destkop: "https://via.placeholder.com/300x150",
                 alt: "New logged area home page"
@@ -191,17 +191,17 @@ var projects =
             title: "Coordinator",
             client: "Caixa Seguradora",
             dates: {
-                start: "15/Jan/2015",
+                start: "15/Jan/2015", //@made some changes here... Why work with hypen if I can play whit the object?
                 end: "14/Feb/2017"
             },
-            country: {
+            country: { //changed location to country, make more sense to me
                 name: 'Brazil',
                 city: 'Brasília',
                 flag: '🇧🇷'
             },
             description: "Was responsible the coordinating of all on going projects and new projects of 6 business unit under " +
             "the entire web portal",
-            image: {
+            image: { //I put only one image, because I'm using it in another project mine
                 mobile: "http://via.placeholder.com/250x100",
                 destkop: "https://via.placeholder.com/300x150",
                 alt: "New logged area home page"
@@ -211,16 +211,16 @@ var projects =
             title: "New Projects",
             client: "Caixa Seguradora",
             dates: {
-                start: "10/Set/2014",
+                start: "10/Set/2014", //@made some changes here... Why work with hypen if I can play whit the object?
                 end: "15/Jan/2015"
             },
-            country: {
+            country: { //changed location to country, make more sense to me
                 name: 'Brazil',
                 city: 'Brasília',
                 flag: '🇧🇷'
             },
             description: "Responsible for planning of new projects that was the responsibility of the company IT directory",
-            image: {
+            image: { //I put only one image, because I'm using it in another project mine
                 mobile: "http://via.placeholder.com/250x100",
                 destkop: "https://via.placeholder.com/300x150",
                 alt: "New logged area home page"
@@ -231,16 +231,16 @@ var projects =
             title: "Title of second project",
             client: "XPTO",
             dates: {
-                start: 2012,
+                start: 2012, //@made some changes here... Why work with hypen if I can play whit the object?
                 end: 2015
             },
-            country: {
+            country: { //changed location to country, make more sense to me
                 name: 'Brazil',
                 city: 'Rio de Janeiro',
                 flag: '🇧🇷'
             },
             description: "Lorem ipsum lorem lorem aleluia",
-            image: {
+            image: { //I put only one image, because I'm using it in another project mine
                 mobile: "http://via.placeholder.com/250x100",
                 destkop: "https://via.placeholder.com/300x150",
                 alt: "lorem lorem"
@@ -279,8 +279,8 @@ var education = {
         {
             name: "CECAP",
             location: "Brasilia",
-            degreeDates: {
-                start: 1995,
+            dates: {
+                start: 1995, //@made some changes here... Why work with hypen if I can play whit the object?
                 end: 1999
             },
             ulr: "uol.com",
@@ -290,8 +290,8 @@ var education = {
         {
             name: "Marista",
             location: "Brasilia",
-            degreeDates: {
-                start: 2000,
+            dates: {
+                start: 2000, //@made some changes here... Why work with hypen if I can play whit the object?
                 end: 2002
             },
             ulr: "google.com",
@@ -305,7 +305,7 @@ var education = {
             title: "Nano Degree",
             school: "Udacity",
             dates: {
-                start: "2017",
+                start: "2017", //@made some changes here... Why work with hypen if I can play whit the object?
                 end: "2017"
             },
             url: "http://www.udacity.com"
@@ -346,7 +346,7 @@ function mountSchools(schools) {
         $('.education-entry:last').append(HTMLschoolName.replace('%data%', school.name));
         $('.education-entry:last').find('a').append(HTMLschoolDegree.replace('%data%',school.degree));
         $('.education-entry:last').append(HTMLschoolLocation.replace('%data%', school.location));
-        $('.education-entry:last').append(HTMLschoolDates.replace('%data%',school.degreeDates.end));
+        $('.education-entry:last').append(HTMLschoolDates.replace('%data%',school.dates.end));
 
 
         school.majors.forEach(function (major) {
