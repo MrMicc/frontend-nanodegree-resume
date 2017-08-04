@@ -148,8 +148,7 @@ function initializeMap() {
         });
 
 
-        projects.forEach(function (project) {
-            console.log('location project -'+project.country.city+', '+project.country.name);
+        projects.projects.forEach(function (project) {
             locations.push(project.country.city+', '+project.country.name);
         });
 

@@ -43,7 +43,7 @@ bio.display = function () {
     $('#header').append(HTMLbioPic.replace('%data%', bio.biopic));
 
     var formattedContat = mountContatct();
-    $('#topContacts').append(formattedContat);
+    $('#topContacts, #footerContacts').append(formattedContat); //adding contacts to footer and header
 
     if (bio.skills.length > 0) {
         //language=JQuery-CSS
@@ -59,13 +59,6 @@ bio.display = function () {
 
 
 
-
-    /*************************************
-     *
-     * FOOTER
-     *
-     **************************************/
-    $('#footerContacts').append(mountContatct());
 };
 bio.display();
 
@@ -92,16 +85,14 @@ var work =
     {
         jobs: [
             {
-                title: "Caixa Seguradora",
-                jobPosition: "Project Manager/Product Owner",
+                title: "Project Manager/Product Owner",
                 employer: "Millenium do Brasil",
                 description: "Lorem Lorem Lorem Lorem lorem huahaii lore",
                 dates:  "Setember 2013 - Today",
                 location: "Brasília"
             },
             {
-                title: "Title of Second  job",
-                jobPosition: "programmer",
+                title: "programmer",
                 employer: "ACN",
                 description: "Lorem Lorem Lorem Lorem lorem huahaii lore",
                 dates: "Setember 2007 - Setember 2013",
@@ -144,7 +135,8 @@ work.display();
  **************************************/
 
 var projects =
-    [
+    {
+        projects: [
         {
             title: "New Logged Area",
             client: "Caixa Seguradora",
@@ -229,13 +221,13 @@ var projects =
                     "http://via.placeholder.com/300x150",
                     "https://via.placeholder.com/300x150"
                 ]
-        }
-    ];
+        }]
+    };
 
 
 
 projects.display = function(){
-        projects.forEach(function (project) {
+        projects.projects.forEach(function (project) {
             $("#projects").append(HTMLprojectStart);
 
             $(".project-entry:last").append(HTMLprojectTitle.replace("%data%",project.title));
@@ -274,7 +266,7 @@ var education = {
             name: "Marista",
             location: "Brasilia",
             dates: "2000 - 2002",
-            ulr: "google.com",
+            url: "google.com",
             majors: ["None"],
             degree: "High School"
         }
@@ -295,47 +287,49 @@ education.display = function () {
     mountSchools(education.schools);
     mountOnlineCourses(education.onlineCourses);
 
-};
+    function mountOnlineCourses(onlineCourses) {
+        $('.education-entry:last').after(HTMLonlineClasses);
 
-function mountOnlineCourses(onlineCourses) {
-    $('.education-entry:last').after(HTMLonlineClasses);
-
-    onlineCourses.forEach(function (onlineCourse){
-        "use strict";
-        $('#education').find('h3').after(HTMLschoolStart);
-        $('.education-entry:last').append(HTMLonlineTitle.replace('%data%', onlineCourse.title));
-        $('.education-entry:last').find('a').append(HTMLonlineSchool.replace('%data%', onlineCourse.school));
-        $('.education-entry:last').append(HTMLonlineDates.replace('%data%', onlineCourse.dates));
-        $('.education-entry:last').append(HTMLonlineURL.replace('%data%', onlineCourse.url));
-    });
-
-}
-
-
-function mountSchools(schools) {
-
-    console.log(schools);
-    var formattedSchools = '';
-    schools.forEach( function(school){
-        "use strict";
-        $('#education').append(HTMLschoolStart);
-        $('.education-entry:last').append(HTMLschoolName.replace('%data%', school.name));
-        $('.education-entry:last').find('a').append(HTMLschoolDegree.replace('%data%',school.degree));
-        $('.education-entry:last').append(HTMLschoolLocation.replace('%data%', school.location));
-        $('.education-entry:last').append(HTMLschoolDates.replace('%data%',school.dates));
-
-
-        school.majors.forEach(function (major) {
-            $('.education-entry:last').append(HTMLschoolMajor.replace('%data%',major));
+        onlineCourses.forEach(function (onlineCourse){
+            "use strict";
+            $('#education').find('h3').after(HTMLschoolStart);
+            $('.education-entry:last').append(HTMLonlineTitle.replace('%data%', onlineCourse.title));
+            $('.education-entry:last').find('a').append(HTMLonlineSchool.replace('%data%', onlineCourse.school));
+            $('.education-entry:last').append(HTMLonlineDates.replace('%data%', onlineCourse.dates));
+            $('.education-entry:last').append(HTMLonlineURL.replace('%data%', onlineCourse.url));
         });
 
+    }
 
 
-    });
+    function mountSchools(schools) {
 
-    return formattedSchools;
+        var formattedSchools = '';
+        schools.forEach( function(school){
+            "use strict";
+            $('#education').append(HTMLschoolStart);
+            $('.education-entry:last').append(HTMLschoolName.replace('%data%', school.name));
+            $('.education-entry:last').find('a').append(HTMLschoolDegree.replace('%data%',school.degree));
+            $('.education-entry:last').append(HTMLschoolLocation.replace('%data%', school.location));
+            $('.education-entry:last').append(HTMLschoolDates.replace('%data%',school.dates));
 
-}
+
+            school.majors.forEach(function (major) {
+                $('.education-entry:last').append(HTMLschoolMajor.replace('%data%',major));
+            });
+
+
+
+        });
+
+        return formattedSchools;
+
+    }
+
+};
+
+
+
 
 
 education.display();
